@@ -1,0 +1,40 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F3E5F5"/>
+  
+  <!-- Beaker -->
+  <path d="M100 140 L100 180 Q100 200 120 200 L160 200 Q180 200 180 180 L180 140" stroke="#7B1FA2" stroke-width="4" fill="none"/>
+  <ellipse cx="140" cy="140" rx="40" ry="5" fill="#7B1FA2"/>
+  
+  <!-- Liquid in beaker -->
+  <path d="M105 170 L105 180 Q105 195 120 195 L160 195 Q175 195 175 180 L175 170" fill="#4CAF50" opacity="0.7"/>
+  
+  <!-- Bubbles -->
+  <circle cx="120" cy="160" r="5" fill="#81C784" opacity="0.8"/>
+  <circle cx="140" cy="150" r="7" fill="#81C784" opacity="0.8"/>
+  <circle cx="160" cy="165" r="4" fill="#81C784" opacity="0.8"/>
+  
+  <!-- Magnifying glass -->
+  <circle cx="250" cy="160" r="30" stroke="#FF9800" stroke-width="4" fill="none"/>
+  <line x1="275" y1="185" x2="295" y2="205" stroke="#FF9800" stroke-width="4"/>
+  
+  <!-- Plant in magnifying glass -->
+  <path d="M250 145 Q240 155 250 165" stroke="#4CAF50" stroke-width="2" fill="none"/>
+  <ellipse cx="235" cy="143" rx="8" ry="12" fill="#66BB6A"/>
+  
+  <!-- Microscope -->
+  <rect x="340" y="120" width="8" height="60" fill="#607D8B"/>
+  <circle cx="344" cy="110" r="15" fill="#90A4AE"/>
+  <rect x="324" y="180" width="40" height="8" fill="#607D8B"/>
+  <rect x="334" y="140" width="20" height="4" fill="#455A64"/>
+  
+  <!-- Happy scientist child -->
+  <circle cx="60" cy="80" r="15" fill="#FFDBAC"/>
+  <circle cx="55" cy="77" r="1.5" fill="#333"/>
+  <circle cx="65" cy="77" r="1.5" fill="#333"/>
+  <path d="M55 87 Q60 92 65 87" stroke="#333" stroke-width="1.5" fill="none"/>
+  <rect x="55" y="95" width="10" height="15" fill="#FFF" rx="1"/>
+  <text x="60" y="105" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#333">SCI</text>
+  
+  <!-- Title -->
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#6A1B9A">Science Discovery</text>
+</svg>

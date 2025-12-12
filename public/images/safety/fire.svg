@@ -1,0 +1,35 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#FFE5E5"/>
+  
+  <!-- Fire flames - large and clear -->
+  <path d="M150 200 Q140 180 150 160 Q160 180 150 200" fill="#FF5722" opacity="0.9"/>
+  <path d="M170 200 Q165 185 170 170 Q175 185 170 200" fill="#FF9800" opacity="0.9"/>
+  <path d="M190 200 Q185 188 190 175 Q195 188 190 200" fill="#FFEB3B" opacity="0.9"/>
+  
+  <!-- Fire base -->
+  <ellipse cx="170" cy="205" rx="30" ry="8" fill="#D32F2F"/>
+  
+  <!-- Warning sign -->
+  <polygon points="250,120 290,200 210,200" fill="#FFC107"/>
+  <text x="250" y="170" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">!</text>
+  <text x="250" y="190" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">HOT!</text>
+  
+  <!-- Large NO sign -->
+  <circle cx="250" cy="120" r="50" fill="none" stroke="#D32F2F" stroke-width="8"/>
+  <line x1="220" y1="90" x2="280" y2="150" stroke="#D32F2F" stroke-width="8"/>
+  
+  <!-- Happy child staying away -->
+  <circle cx="100" cy="100" r="15" fill="#FFDBAC"/>
+  <circle cx="95" cy="97" r="1.5" fill="#333"/>
+  <circle cx="105" cy="97" r="1.5" fill="#333"/>
+  <path d="M95 107 Q100 112 105 107" stroke="#333" stroke-width="1.5" fill="none"/>
+  <rect x="90" y="115" width="20" height="25" fill="#4CAF50" rx="2"/>
+  
+  <!-- Child pointing away from fire -->
+  <line x1="110" y1="120" x2="140" y2="140" stroke="#FFDBAC" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="140" cy="140" r="4" fill="#FFDBAC"/>
+  
+  <!-- Large text messages -->
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#D32F2F">FIRE BURNS!</text>
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#333">STAY AWAY!</text>
+</svg>

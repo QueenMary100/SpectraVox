@@ -1,0 +1,248 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Course Enrollment Schema",
+  "description": "Schema for course enrollments and status tracking in APTX SpectraX",
+  "type": "object",
+  "properties": {
+    "enrollmentId": {
+      "type": "string",
+      "description": "Unique identifier for the enrollment",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "description": "Course ID being enrolled in",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "userId": {
+      "type": "string",
+      "description": "User ID of the enrolled student",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "enrolledBy": {
+      "type": "string",
+      "description": "User ID who created the enrollment (teacher, parent, or self)",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "enrolledAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when enrollment was created"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "completed", "paused", "dropped", "suspended"],
+      "default": "active",
+      "description": "Current enrollment status"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the student started or will start the course"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Expected or actual end date"
+    },
+    "completionDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Actual completion date (if completed)"
+    },
+    "progressPercentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall progress percentage"
+    },
+    "currentModule": {
+      "type": "string",
+      "description": "ID of the current module being worked on"
+    },
+    "completedModules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of completed module IDs"
+    },
+    "lockedModules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Modules that are not yet accessible"
+    },
+    "timeSpent": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total time spent in minutes"
+    },
+    "lastActivity": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last activity"
+    },
+    "adaptivePath": {
+      "type": "object",
+      "properties": {
+        "pathId": {
+          "type": "string",
+          "description": "Unique identifier for this adaptive path"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the adaptive path was generated"
+        },
+        "basedOn": {
+          "type": "object",
+          "properties": {
+            "assessmentResults": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "learningStyle": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "specialNeeds": {
+              "type": "object"
+            }
+          }
+        },
+        "modifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "moduleId": {
+                "type": "string"
+              },
+              "modification": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "appliedAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    "accommodations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["timing", "presentation", "response", "setting", "scheduling"]
+          },
+          "accommodation": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean",
+            "default": true
+          },
+          "appliedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Specific accommodations for this enrollment"
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "goalId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "targetDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["not-started", "in-progress", "achieved", "not-achieved"]
+          },
+          "progress": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      },
+      "description": "Individual learning goals for this enrollment"
+    },
+    "notifications": {
+      "type": "object",
+      "properties": {
+        "reminders": {
+          "type": "boolean",
+          "default": true
+        },
+        "progressUpdates": {
+          "type": "boolean",
+          "default": true
+        },
+        "achievements": {
+          "type": "boolean",
+          "default": true
+        },
+        "frequency": {
+          "type": "string",
+          "enum": ["daily", "weekly", "bi-weekly", "monthly"],
+          "default": "weekly"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["self-enrollment", "teacher-assigned", "parent-enrolled", "admin-assigned"]
+        },
+        "referralCode": {
+          "type": "string"
+        },
+        "promotion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    }
+  },
+  "required": ["enrollmentId", "courseId", "userId", "enrolledBy", "enrolledAt", "status", "createdAt"],
+  "additionalProperties": false
+}

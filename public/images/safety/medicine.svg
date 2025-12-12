@@ -1,0 +1,52 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#FCE4EC"/>
+  
+  <!-- Medicine bottle -->
+  <rect x="180" y="130" width="40" height="60" fill="#F44336" rx="5"/>
+  <rect x="175" y="120" width="50" height="15" fill="#D32F2F" rx="3"/>
+  <rect x="190" y="115" width="20" height="10" fill="#795548" rx="2"/>
+  
+  <!-- Medicine pills -->
+  <circle cx="200" cy="160" r="6" fill="#FF9800"/>
+  <circle cx="200" cy="175" r="6" fill="#FFEB3B"/>
+  
+  <!-- Cross on bottle -->
+  <rect x="198" y="135" width="4" height="12" fill="white"/>
+  <rect x="194" y="139" width="12" height="4" fill="white"/>
+  
+  <!-- Warning sign -->
+  <polygon points="100,80 140,160 60,160" fill="#FFC107"/>
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">!</text>
+  <text x="100" y="150" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">MEDICINE!</text>
+  
+  <!-- Large NO sign -->
+  <circle cx="100" cy="80" r="50" fill="none" stroke="#D32F2F" stroke-width="8"/>
+  <line x1="70" y1="50" x2="130" y2="110" stroke="#D32F2F" stroke-width="8"/>
+  
+  <!-- Doctor/grown-up with medicine -->
+  <circle cx="300" cy="120" r="15" fill="#FFDBAC"/>
+  <rect x="285" y="135" width="30" height="35" fill="#2196F3" rx="3"/>
+  <rect x="295" y="110" width="10" height="10" fill="white" rx="2"/>
+  
+  <!-- Grown-up giving medicine safely -->
+  <path d="M300 170 L290 190" stroke="#FF9800" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="285" cy="195" r="4" fill="#FF9800"/>
+  
+  <!-- Safe child with grown-up -->
+  <circle cx="320" cy="150" r="12" fill="#FFDBAC"/>
+  <circle cx="315" cy="147" r="1" fill="#333"/>
+  <circle cx="325" cy="147" r="1" fill="#333"/>
+  <path d="M315 157 Q320 162 325 157" stroke="#333" stroke-width="1" fill="none"/>
+  <rect x="310" y="162" width="20" height="20" fill="#4CAF50" rx="2"/>
+  
+  <!-- Check mark for safe use -->
+  <circle cx="320" cy="100" r="15" fill="#4CAF50"/>
+  <path d="M310 100 L315 105 L330 90" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Candy vs Medicine distinction -->
+  <text x="50" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4CAF50">✅ WITH GROWN-UP = SAFE</text>
+  <text x="230" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#F44336">❌ ALONE = DANGEROUS</text>
+  
+  <!-- Large text messages -->
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#D32F2F">ONLY GROWN-UPS!</text>
+</svg>

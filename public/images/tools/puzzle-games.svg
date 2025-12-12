@@ -1,0 +1,20 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#E0F2F1"/>
+  
+  <!-- Puzzle piece -->
+  <path d="M30 30 L45 30 L45 35 Q50 30 55 35 L55 30 L70 30 L70 45 L65 45 Q70 50 65 55 L70 55 L70 70 L55 70 L55 65 Q50 70 45 65 L45 70 L30 70 L30 55 L35 55 Q30 50 35 45 L30 45 Z" fill="#4CAF50"/>
+  
+  <!-- Second puzzle piece -->
+  <path d="M75 75 L90 75 L90 90 L75 90 L75 85 Q80 80 85 85 L85 80 L90 80 L90 75" fill="#FF9800"/>
+  
+  <!-- Puzzle details -->
+  <circle cx="40" cy="40" r="3" fill="#81C784"/>
+  <circle cx="60" cy="40" r="3" fill="#81C784"/>
+  <circle cx="40" cy="60" r="3" fill="#81C784"/>
+  <circle cx="60" cy="60" r="3" fill="#81C784"/>
+  
+  <circle cx="82" cy="82" r="2" fill="#FFB74D"/>
+  
+  <!-- Star for completion -->
+  <polygon points="20,20 22,26 28,26 23,30 25,36 20,32 15,36 17,30 12,26 18,26" fill="#FFD700"/>
+</svg>

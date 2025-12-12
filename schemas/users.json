@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User Profile Schema",
+  "description": "Schema for user profiles and preferences in APTX SpectraX",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "Unique identifier for the user",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "User's email address"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["student", "teacher", "guardian", "admin"],
+      "description": "User role in the platform"
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "User's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User's last name"
+        },
+        "ageGroup": {
+          "type": "string",
+          "enum": ["3-7 years", "8-12 years", "13-18 years", "18+ years"],
+          "description": "Age group for appropriate content"
+        },
+        "learningStyle": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["visual", "auditory", "kinesthetic", "reading"]
+          },
+          "description": "Preferred learning styles"
+        },
+        "accommodations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "extra_time",
+              "visual_supports",
+              "audio_instructions",
+              "simplified_text",
+              "large_print",
+              "high_contrast",
+              "voice_commands",
+              "touch_interface"
+            ]
+          },
+          "description": "Required accommodations"
+        },
+        "specialNeeds": {
+          "type": "object",
+          "properties": {
+            "cognitiveLevel": {
+              "type": "string",
+              "enum": ["mild", "moderate", "significant"],
+              "description": "Cognitive functioning level"
+            },
+            "attentionSpan": {
+              "type": "string",
+              "enum": ["5-10 minutes", "10-15 minutes", "15-20 minutes", "20+ minutes"],
+              "description": "Typical attention span for activities"
+            },
+            "communicationStyle": {
+              "type": "string",
+              "enum": ["verbal", "nonverbal", "limited_verbal", "augmentative"],
+              "description": "Primary communication method"
+            },
+            "motorSkills": {
+              "type": "string",
+              "enum": ["typical", "fine_motor_challenges", "gross_motor_challenges", "both"],
+              "description": "Motor skills assessment"
+            },
+            "sensoryNeeds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["visual_support", "audio_support", "tactile_support", "minimal_stimulus"]
+              },
+              "description": "Sensory accommodations needed"
+            }
+          }
+        },
+        "preferences": {
+          "type": "object",
+          "properties": {
+            "theme": {
+              "type": "string",
+              "enum": ["light", "dark", "high_contrast"],
+              "default": "light"
+            },
+            "fontSize": {
+              "type": "string",
+              "enum": ["normal", "large", "extra_large"],
+              "default": "normal"
+            },
+            "voiceSpeed": {
+              "type": "string",
+              "enum": ["slow", "normal", "fast"],
+              "default": "normal"
+            },
+            "autoPlayAudio": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      },
+      "required": ["firstName", "lastName", "ageGroup"]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when user was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when user was last updated"
+    },
+    "lastLogin": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last login"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the user account is active"
+    }
+  },
+  "required": ["userId", "email", "role", "profile", "createdAt"],
+  "additionalProperties": false
+}

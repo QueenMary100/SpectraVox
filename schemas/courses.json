@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Course Content Schema",
+  "description": "Schema for course content and structure in APTX SpectraX",
+  "type": "object",
+  "properties": {
+    "courseId": {
+      "type": "string",
+      "description": "Unique identifier for the course",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Course title",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "description": "Course description",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "Mathematics",
+        "Literacy",
+        "Science",
+        "Life Skills",
+        "Social Skills",
+        "Communication",
+        "Motor Skills",
+        "Creative Arts"
+      ],
+      "description": "Primary subject area"
+    },
+    "ageGroup": {
+      "type": "string",
+      "enum": ["3-7 years", "8-12 years", "13-18 years", "18+ years", "All ages"],
+      "description": "Target age group"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"],
+      "description": "Difficulty level"
+    },
+    "duration": {
+      "type": "string",
+      "pattern": "^\\d+\\s+(weeks?|months?|hours?)$",
+      "description": "Estimated duration (e.g., '4 weeks', '2 months')"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "moduleId": {
+            "type": "string",
+            "description": "Unique identifier for the module"
+          },
+          "title": {
+            "type": "string",
+            "description": "Module title",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "description": "Module description"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Order of the module in the course"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityId": {
+                  "type": "string",
+                  "description": "Unique identifier for the activity"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Activity title"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "interactive",
+                    "video",
+                    "game",
+                    "assessment",
+                    "reading",
+                    "writing",
+                    "listening",
+                    "speaking",
+                    "creative",
+                    "physical"
+                  ],
+                  "description": "Type of activity"
+                },
+                "instructions": {
+                  "type": "string",
+                  "description": "Step-by-step instructions for the activity"
+                },
+                "estimatedTime": {
+                  "type": "string",
+                  "pattern": "^\\d+-\\d+\\s+minutes$",
+                  "description": "Estimated time to complete (e.g., '15-20 minutes')"
+                },
+                "interactions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "touch",
+                      "voice",
+                      "drag-drop",
+                      "click",
+                      "type",
+                      "record",
+                      "draw",
+                      "move"
+                    ]
+                  },
+                  "description": "Types of interactions supported"
+                },
+                "adaptations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Adaptations available for this activity"
+                },
+                "assessment": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": ["formative", "summative", "diagnostic", "observational"]
+                    },
+                    "questions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "question": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": ["multiple-choice", "true-false", "open-ended", "matching", "drag-drop"]
+                          },
+                          "options": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "correctAnswer": {
+                            "type": "string"
+                          },
+                          "hints": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "successCriteria": {
+                      "type": "string",
+                      "description": "Criteria for successful completion"
+                    }
+                  }
+                }
+              },
+              "required": ["activityId", "title", "type", "instructions", "estimatedTime"]
+            }
+          },
+          "objectives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Learning objectives for this module"
+          },
+          "accommodations": {
+            "type": "object",
+            "properties": {
+              "visual": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "auditory": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "physical": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cognitive": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": ["moduleId", "title", "order", "activities"]
+      }
+    },
+    "adaptiveFeatures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Adaptive features available in the course"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Prerequisite courses or skills"
+    },
+    "learningOutcomes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Expected learning outcomes"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for categorization and search"
+    },
+    "imageUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for course thumbnail or image"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "default": "draft"
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User ID of the course creator"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["courseId", "title", "description", "subject", "ageGroup", "difficulty", "modules", "createdBy", "createdAt"],
+  "additionalProperties": false
+}

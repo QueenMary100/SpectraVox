@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Progress Tracking Schema",
+  "description": "Schema for student progress tracking in APTX SpectraX",
+  "type": "object",
+  "properties": {
+    "progressId": {
+      "type": "string",
+      "description": "Unique identifier for the progress record",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "studentId": {
+      "type": "string",
+      "description": "Student user ID",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "courseId": {
+      "type": "string",
+      "description": "Course ID",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "moduleId": {
+      "type": "string",
+      "description": "Module ID (if tracking at module level)",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "activityId": {
+      "type": "string",
+      "description": "Activity ID (if tracking at activity level)",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "completionStatus": {
+      "type": "string",
+      "enum": ["not-started", "in-progress", "completed", "mastered", "needs-support"],
+      "description": "Current completion status"
+    },
+    "timeSpent": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Time spent in minutes"
+    },
+    "sessionTime": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Time spent in current session in minutes"
+    },
+    "assessmentScores": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "description": "Array of assessment scores (0-100)"
+    },
+    "averageScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Average assessment score"
+    },
+    "engagementLevel": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Engagement level percentage (0-100)"
+    },
+    "attempts": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Number of attempts made"
+    },
+    "hintsUsed": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Number of hints used"
+    },
+    "accommodationsUsed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Accommodations used during this progress"
+    },
+    "challenges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Challenges encountered"
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Strengths demonstrated"
+    },
+    "feedback": {
+      "type": "object",
+      "properties": {
+        "teacherNotes": {
+          "type": "string",
+          "description": "Notes from teacher/parent"
+        },
+        "systemFeedback": {
+          "type": "string",
+          "description": "Automated feedback from the system"
+        },
+        "studentSelfAssessment": {
+          "type": "string",
+          "description": "Student's own assessment of their work"
+        },
+        "emotionalState": {
+          "type": "string",
+          "enum": ["happy", "frustrated", "confident", "anxious", "bored", "excited", "calm"],
+          "description": "Student's emotional state during the activity"
+        }
+      }
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "milestoneId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "achievedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "celebration": {
+            "type": "string",
+            "description": "How the milestone was celebrated"
+          }
+        }
+      },
+      "description": "Milestones achieved during this progress"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["accommodation", "strategy", "next_step", "review", "practice"]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "implemented": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "description": "AI-generated recommendations"
+    },
+    "adaptationsApplied": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "adaptation": {
+            "type": "string"
+          },
+          "appliedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "effectiveness": {
+            "type": "string",
+            "enum": ["very-effective", "effective", "somewhat-effective", "not-effective"]
+          }
+        }
+      },
+      "description": "Adaptations applied and their effectiveness"
+    },
+    "sessionData": {
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "breaks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "startTime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "endTime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "interactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "type": {
+                "type": "string"
+              },
+              "data": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this progress record was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this progress record was last updated"
+    },
+    "lastAccessed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this content was last accessed"
+    }
+  },
+  "required": ["progressId", "studentId", "courseId", "completionStatus", "createdAt", "updatedAt"],
+  "additionalProperties": false
+}
