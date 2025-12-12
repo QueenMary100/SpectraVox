@@ -12,6 +12,7 @@ Our mission began with a simple question: "How can we use AI to create a truly a
 
 We were inspired by:
 
+*We were deeply moved to come up with the solution when we noticed that out of every 7 children in a group , 2 have down syndrome but only one or none manage to get standard education , thus millions to billions of kids world wide are left unaided and can't support themself and have to mostly rely on assistance.
 *   The unique learning profiles of students with Down syndrome, who benefit from repetition, multi-sensory input (visual, audio), and positive reinforcement.
 *   The dedication of teachers and guardians who spend countless hours adapting standard curriculum.
 *   The potential for AI to automate content simplification, create personalized learning paths, and provide valuable insights into a student's progress and well-being.
@@ -112,6 +113,8 @@ We plan to grow the prototype into a full learning companion with:
 
 *   Deeper personalization of lesson content based on individual progress.
 *   Gamified learning milestones and rewards to boost engagement.
+*Come up with mobile app flutter based and low latency app
+*Integrate ussd and sms channel to enhance knowledge
 *   Teacher-facing analytics to identify classroom-wide learning trends.
 *   Offline mode for lessons to ensure accessibility in all environments.
 *   Integration with school information systems (SIS).
