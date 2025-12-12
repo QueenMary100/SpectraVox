@@ -3,6 +3,14 @@
 ## The AI Companion for Students with Down Syndrome
 
 A student-centric, multi-feature platform designed to make learning more accessible, engaging, and joyful.
+Recording Demo: https://www.youtube.com/watch?v=bTbpgMgW_kU
+<img width="1365" height="690" alt="uploadcurriculum" src="https://github.com/user-attachments/assets/22210d03-52be-4483-b8cc-7e9c025d19ca" />
+<img width="1339" height="681" alt="hero" src="https://github.com/user-attachments/assets/ba1b93ca-ef6c-4305-a6d0-28039bf9240c" />
+<img width="1334" height="718" alt="dashboard" src="https://github.com/user-attachments/assets/8a0bfddd-658f-4414-94d4-f8be0281fb92" />
+<img width="1363" height="686" alt="community" src="https://github.com/user-attachments/assets/712582dc-36c2-4588-9f3f-f929573702fb" />
+<img width="1343" height="684" alt="check-in" src="https://github.com/user-attachments/assets/3e073552-4ae2-45ed-b068-dd37f480b19c" />
+<img width="1341" height="670" alt="about" src="https://github.com/user-attachments/assets/946610bb-c1da-4ca5-aacc-34cd627e42aa" />
+
 
 ## Inspiration
 
@@ -73,7 +81,7 @@ SpectraVoX is a holistic web application designed as a complete learning and sup
              | Function Call (e.g., simplifyCurriculum(content))
              v
 +--------------------------------+
-|       AI Layer (Genkit)        |
+|   AI Layer (Genkit)ElevenLabs     |
 |          (AI Flows)            |
 +--------------------------------+
              |
